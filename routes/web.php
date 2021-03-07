@@ -17,8 +17,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('/');
-
-// Route::resource('guru', [GuruController::class]);
-// Route::get('guru', [GuruController::class, 'index'])->name('guru');
 Route::resource('guru', GuruController::class);
 Route::get('siswa', [SiswaController::class, 'index'])->name('siswa');

@@ -32,11 +32,13 @@
                         <td><img src="{{ asset('img/' . $guru->foto) }}" width="80"></td>
                         <td>
                             <form action="{{ route('guru.destroy', $guru->id_guru) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
                                 <a href="{{ route('guru.show', $guru->id_guru) }}" class="btn btn-sm btn-success">Show</a>
                                 <a href="{{ route('guru.edit', $guru->id_guru) }}"
                                     class="btn btn-sm btn-warning text-white">Edit</a>
                                 <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                                    onclick="return confirm('Apakah Anda yakin ingin menghapus data {{ $guru->nip }} ?')">Delete</button>
                             </form>
                         </td>
                     </tr>

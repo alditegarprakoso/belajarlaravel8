@@ -24,8 +24,9 @@
             </div>
         @endif
 
-        <form action="{{ route('guru.store') }}" method="POST">
+        <form action="{{ route('guru.update', $guru->id_guru) }}" method="POST">
             @csrf
+            @method('PUT')
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 mb-4">

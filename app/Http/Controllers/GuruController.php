@@ -46,11 +46,15 @@ class GuruController extends Controller
     public function update(Request $request, Guru $guru)
     {
         $request->validate([
+            'nip' => 'required',
             'nama' => 'required',
             'mapel' => 'required',
         ]);
 
-        $guru->update($request->all());
+        $data = $request->all();
+        $data['foto'] = 'default.jpg';
+
+        $guru->update($data);
 
         return redirect()->route('guru.index')->with('success', 'Guru updated successfully');
     }
