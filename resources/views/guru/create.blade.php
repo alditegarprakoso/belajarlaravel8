@@ -8,8 +8,7 @@
                     <h2>Tambah data Guru</h2>
                 </div>
                 <div class="float-right">
-                    <a class="btn btn-secondary" href="{{ route('guru.index') }}">
-                        < Kembali</a>
+                    <a class="btn btn-secondary" href="{{ route('guru.index') }}">Kembali</a>
                 </div>
             </div>
         </div>
@@ -33,18 +32,27 @@
                     <div class="form-group">
                         <strong>NIP:</strong>
                         <input type="text" name="nip" class="form-control" autofocus>
+                        @error('nip')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 mb-4">
                     <div class="form-group">
                         <strong>Nama:</strong>
                         <input type="text" name="nama" class="form-control">
+                        @error('nama')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 mb-4">
                     <div class="form-group">
                         <strong>Mata Pelajaran:</strong>
                         <input type="text" name="mapel" class="form-control">
+                        @error('mapel')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 mb-4">
